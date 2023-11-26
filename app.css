@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
 
 }
 
@@ -16,6 +15,10 @@ body{
 
 a{
   text-decoration: none;
+}
+
+li{
+  list-style: none;
 }
 
 #header{
@@ -113,7 +116,8 @@ a{
 
 #header .profile-notify .profile .profile-name{display: none;}
 
-#header .profile-notify .profile .profile-abbr-div{
+#header .profile-notify .profile .profile-abbr-div,
+.dropdown-top .dropdown-head .drop-profile .drop-abbr{
   display: grid;
   place-items: center;
   color: #0000005b;
@@ -192,6 +196,10 @@ a{
   background:#FFFFFF;
   border: 1px solid #DBDBDB;
   padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 16px;
   box-shadow: 0px 1px 0px 0px 5%;
 
@@ -262,63 +270,360 @@ gap: 8px;
   background-color: #1A1A1A;
 }
 
-.shopify-dashboard .accordion-step{
-background:#F3F3F3 ;
+.accordion-step{
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 8px;
 }
 
-.shopify-accordion-content .shopify-accordion-text{
+.accordion-step .shopify-accordion{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 8px 8px 12px 8px;
+ gap: 8px;
+ text-align: left;
+ width: 100%;
+}
+
+.accordion-step .shopify-accordion .shopify-accordion1{
   display: flex;
   flex-direction: column;
-  align-items:flex-start;
-  justify-content: center;
   padding: 2px 0px;
   gap: 16px;
+  width: 100%;
 }
 
-.acc-drop{
-  display: flex;
-  flex-direction: column;
-  align-items:flex-start;
-  justify-content: center;
-  gap: 16px;
-
+.shopify-accordion1 .shopify-accordion-head{
+display: flex;
+gap: 8px;
+width: 100%;
 }
 
-.shopify-accordion-text h3{
+.shopify-accordion-head .tick .tick-icon{
+  width: 20px;
+  height: 20px;
+
+}
+.shopify-accordion-head h3{
   font-weight: 600;
   font-size: 13px;
   color:#303030;
   line-height: 18.2px;
 }
 
-.shopify-accordion-text p{
+.shopify-accordion1 .acc-drop-panel{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 28px;
+
+}
+
+.notification-active{
+  display: block;
+}
+
+.profile-active{
+  display: block;
+}
+
+.shopify-accordion1 .acc-drop-panel p{
   font-weight: 500;
   font-size: 14px;
   color:#616161;
-  line-height: 19.6px;
+  line-height: 19.6px; 
 }
 
-.shopify-accordion-text p > a{
+.acc-drop-panel p > a{
   font-weight: 500;
   font-size: 13px;
   line-height: 18.2px;
   color: #005BD3;
+  cursor: pointer;
 }
 
-.shopify-accordion-text .accordion-btn{
-   color:#FFFFFF;
+.acc-drop-panel .accordion-btn{
+   color:#F6F3F6;
+   font-weight: 600;
+   font-size: 12px;
    padding: 6px 12px;
-   border: 1.5px solid rgba(255, 255, 255, 0.2);   
-   border-bottom: 0;
+   border: 1.5px solid #FFFFFF33;  
+   border-width: 1.5px, 1.5px, 0px, 1.5px;
    border-radius:6px;
    background:#404040;
    box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
    0px 2px 0px 0px #000;
-   
+   margin-top: 16px;
+}
+
+.acc-drop-panel .accordion-btn:hover{
+  background: #2A2A2A;
+  border: 1.5px solid #FFFFFF33;  
+  border-width: 1.5px, 1.5px, 0px, 1.5px;
+  box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
+   0px 2px 0px 0px #000;
+}
+
+.acc-drop-panel .accordion-btn:active{
+  background: #2B2B2B;
+  box-shadow: 0px 0px 0px 1.5px #333333,
+  0px 3px 0px 0px #000000 inset;
+
+}
+
+.acc-drop-panel .accordion-btn:focus{
+  background: #404040;
+  box-shadow: 0px 0px 0px 5px #005BD3,
+   0px 0px 0px 3px #FFFFFF,
+   0px 0px 0px 1.5px #333333;
+}
+
+.acc-drop-panel .accordion-btn2{
+font-weight: 600;
+font-size: 12px;
+line-height: 15.6px;
+color: #323232;
+border-radius: 6px;
+border: 1px solid #0000001A;
+padding: 6px 12px;
+background: #FFFFFF;
+box-shadow: 0px -1px 0px 0px #B5B5B5 inset;
+}
+
+.acc-drop-panel .accordion-btn2:hover{
+background: #F7F7F7;
+color: #323232;
+}
+
+.acc-drop-panel .accordion-btn2:active{
+  background: #F7F7F7;
+  box-shadow: 0px 2px 1.5px 0px #E2E2E2 inset;
+}
+
+.acc-drop-panel .accordion-btn2:focus{
+  background: #FFFFFF;
+  border: 1px solid #0000001A;
+  box-shadow: 0px 0px 0px 3px #005BD3,
+  0px 0px 0px 1px #FFFFFF,
+  0px -1px 0px 0px #B5B5B5 inset;
+
 }
 
 .shopify-accordion-img{
   display: none;
+}
+
+.dropdown1{
+  position: relative;
+  display: inline-block;
+}
+
+.profile-notify #notification-dropdown{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  border: 1px solid #DBDBDB;
+  border-radius: 14px;
+  padding: 16px;
+  position: absolute;
+  z-index: 1;
+  right: -10px;
+  top: 50px;
+  width: 358px;
+  box-shadow: 0px 4px 8px 0px #0000000D;
+  display: none;
+}
+
+#notification-dropdown .alert-icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#notification-dropdown .alert-icons p{
+  font-weight: 600;
+  font-size: 16px;
+  color: #303030;
+}
+
+#notification-dropdown .alert-icons .a-icons{
+  display: flex;
+  gap: 16px;
+  color: #616161;
+}
+
+#notification-dropdown .alert-icons .a-icons svg{
+  width: 20px;
+  height: 20px;
+}
+
+#notification-dropdown .alert-text{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+text-align: center;
+background: #F1F1F1;
+padding: 16px;
+font-weight: 600;
+font-size: 13px;
+color: #616161;
+}
+
+.dropdown2{
+  position: relative;
+  display: inline-block;
+}
+
+.profile-notify #profile-dropdown{
+  width:320px;
+  border-radius: 14px;
+  border: 1px solid #DBDBDB;
+  background: #FFFFFF;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 52px;
+  box-shadow: 0px 4px 8px 0px #0000000D; 
+  display: none;
+}
+
+#profile-dropdown .dropdown-top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 6px 0px;
+  border-bottom: 0.75px solid #E1E1E1;
+}
+
+#profile-dropdown .dropdown-top .dropdown-head{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+#profile-dropdown .dropdown-top .dropdown-head{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  gap: 8px;
+  border-radius: 8px;
+  padding:4px 12px 4px 8px;
+  background: #F1F1F1; 
+  cursor: pointer;
+  width: 100%;
+}
+
+.dropdown-top .dropdown-head .drop-profile{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content:space-between;
+  border: none;
+  gap: 8px;
+}
+
+.dropdown-top .dropdown-head .drop-profile .drop-name{
+  color: #303030;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18.2px;
+  border-radius: 7px;
+  display: block;
+} 
+
+.dropdown-top .dropdown-head .drop-icon{
+  width: 16px;
+  height: 16px;
+}
+
+.dropdown-top .drop-stores{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px;
+}
+
+.drop-stores svg{
+width: 20px;
+height: 20px;
+}
+
+.drop-stores p{
+  color: #303030;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.dropdown-mid{  border-bottom: 0.75px solid #E1E1E1;}
+
+.dropdown-mid,
+.dropdown-bottom{
+  padding: 0px 6px;
+  width: 100%;
+  padding: 6px 0px;
+
+}
+
+.dropdown-mid li,
+.dropdown-bottom li{
+  width: 100%;
+}
+
+.dropdown-mid li a,
+.dropdown-bottom li a{
+  width: 100%;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18.2px;
+  display: inline-block;
+  color:#303030;
+  padding: 6px;
+
+}
+
+#profile-dropdown .dropdown-mid-list{
+  padding: 10px;
+}
+
+#profile-dropdown .dropdown-mid-list p{
+  font-size: 13px;
+  font-weight: 500;
+  color:#303030;
+}
+
+#profile-dropdown .dropdown-mid-list a{
+  font-size: 12px;
+  font-weight: 400;
+  color:#616161;
+}
+
+#profile-dropdown li:hover{
+  border-radius: 8px;
+  background:#F1F1F1;
+  padding: 6px;
+}
+
+#profile-dropdown li:active{
+  border-radius: 8px;
+  background:#F0F0F0;
+  padding: 6px;
+}
+
+#profile-dropdown li:focus{
+  border-radius: 8px;
+  border: 2px solid #005BD3;
+  background: #005BD3;
+  padding: 6px;
 }
 
 @media screen and (min-width:1024px) {
@@ -328,7 +633,6 @@ background:#F3F3F3 ;
     align-items: center;
     justify-content:center;
   }
-
 
   #header{
     display: flex;
@@ -386,8 +690,9 @@ background:#F3F3F3 ;
   .shopify-plans{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 8px;
+    padding: 8px;
     width: 800px;
     position: relative;
   }
@@ -407,6 +712,11 @@ background:#F3F3F3 ;
   .shopify-dashboard{
     width: 800px;
     border-radius: 18px;
+  }
+
+  .main-accordion{
+    width: 100%;
+    padding: 8px;
 
   }
 
@@ -416,5 +726,10 @@ background:#F3F3F3 ;
     align-items: center;
     justify-content: space-between;
   }
+
+  .shopify-accordion .shopify-accordion-img{
+    display: block;
+  }
+
   
 }
