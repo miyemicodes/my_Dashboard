@@ -121,7 +121,7 @@ function app() {
      menuItemIndex,
     allMenuItems
   ) {
-    // create some helpful variables : isLastMenuItem, isFirstMenuItem
+
     const isLastMenuItem =
       menuItemIndex === allMenuItems.length - 1;
     const isFirstMenuItem = menuItemIndex === 0;
@@ -133,7 +133,6 @@ function app() {
       menuItemIndex - 1
     );
 
-    // if the user pressed arrow right or arrow down
     if (
       event.key === "ArrowRight" ||
       event.key === "ArrowDown"
@@ -240,5 +239,3 @@ function app() {
 }
 
 app();
-
-
