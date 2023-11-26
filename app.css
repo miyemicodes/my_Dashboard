@@ -10,7 +10,7 @@
 body{
   width: 100%;
   height: 100%;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 a{
@@ -422,8 +422,8 @@ color: #323232;
   display: inline-block;
 }
 
-.profile-notify #notification-dropdown{
-  display: flex;
+.profile-notify .notification-dropdown{
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 16px;
@@ -437,34 +437,37 @@ color: #323232;
   top: 50px;
   width: 358px;
   box-shadow: 0px 4px 8px 0px #0000000D;
-  display: none;
 }
 
-#notification-dropdown .alert-icons{
+.profile-notify .notification-dropdown-show {
+  display: flex;
+}
+
+.notification-dropdown .alert-icons{
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
-#notification-dropdown .alert-icons p{
+.notification-dropdown .alert-icons p{
   font-weight: 600;
   font-size: 16px;
   color: #303030;
 }
 
-#notification-dropdown .alert-icons .a-icons{
+.notification-dropdown .alert-icons .a-icons{
   display: flex;
   gap: 16px;
   color: #616161;
 }
 
-#notification-dropdown .alert-icons .a-icons svg{
+.notification-dropdown .alert-icons .a-icons svg{
   width: 20px;
   height: 20px;
 }
 
-#notification-dropdown .alert-text{
+.notification-dropdown .alert-text{
 display: flex;
 align-items: center;
 justify-content: center;
@@ -482,7 +485,7 @@ color: #616161;
   display: inline-block;
 }
 
-.profile-notify #profile-dropdown{
+.profile-notify .profile-dropdown{
   width:320px;
   border-radius: 14px;
   border: 1px solid #DBDBDB;
@@ -494,8 +497,11 @@ color: #616161;
   box-shadow: 0px 4px 8px 0px #0000000D; 
   display: none;
 }
+.profile-notify .profile-dropdown-show {
+  display: block;
+}
 
-#profile-dropdown .dropdown-top{
+.profile-dropdown .dropdown-top{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -505,13 +511,13 @@ color: #616161;
   border-bottom: 0.75px solid #E1E1E1;
 }
 
-#profile-dropdown .dropdown-top .dropdown-head{
+.profile-dropdown .dropdown-top .dropdown-head{
   display: flex;
   align-items: center;
   justify-content:space-between;
 }
 
-#profile-dropdown .dropdown-top .dropdown-head{
+.profile-dropdown .dropdown-top .dropdown-head{
   display: flex;
   align-items: center;
   justify-content:space-between;
@@ -592,35 +598,35 @@ height: 20px;
 
 }
 
-#profile-dropdown .dropdown-mid-list{
+.profile-dropdown .dropdown-mid-list{
   padding: 10px;
 }
 
-#profile-dropdown .dropdown-mid-list p{
+.profile-dropdown .dropdown-mid-list p{
   font-size: 13px;
   font-weight: 500;
   color:#303030;
 }
 
-#profile-dropdown .dropdown-mid-list a{
+.profile-dropdown .dropdown-mid-list a{
   font-size: 12px;
   font-weight: 400;
   color:#616161;
 }
 
-#profile-dropdown li:hover{
+.profile-dropdown li:hover{
   border-radius: 8px;
   background:#F1F1F1;
   padding: 6px;
 }
 
-#profile-dropdown li:active{
+.profile-dropdown li:active{
   border-radius: 8px;
   background:#F0F0F0;
   padding: 6px;
 }
 
-#profile-dropdown li:focus{
+.profile-dropdown li:focus{
   border-radius: 8px;
   border: 2px solid #005BD3;
   background: #005BD3;
