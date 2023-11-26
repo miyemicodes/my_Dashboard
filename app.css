@@ -189,16 +189,19 @@ li{
   
 }
 
-.shopify-plans .plans-button{
+.shopify-plans .plans-button {
   border: 1px solid #00000023;  /*10%*/
   border-radius:6px;
   padding: 6px 12px;
   background:#FFFFFF;
-  color:#323232;      /*10%*/
   box-shadow: 0px -1px 0px 0px #B5B5B5;
   font-size: 12px;
   font-weight: 600;
   line-height: 15.6px;
+}
+
+.shopify-plans .plans-button > a{
+  color:#323232;      /*10%*/
 }
 
 .shopify-dashboard{
