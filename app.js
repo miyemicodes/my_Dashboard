@@ -1,3 +1,4 @@
+// TODO!: I still need to refactor a lot -- this is just like a brute force solution
 function checkbox() {
   let numberOfCheckedBox = 0;
   let activeAccordionIndex = 0;
@@ -241,6 +242,22 @@ function app() {
   );
 
 
+
+  const accordionDropdown = document.querySelector('.accordion-dropdown');
+  const accordionStep = document.querySelector('.accordion-step');
+  accordionDropdown.addEventListener("click", () => {
+    if(accordionDropdown.classList.contains('open')) {
+      accordionStep.style.display = 'none';
+      accordionDropdown.classList.remove('open')
+    } else {
+      accordionStep.style.display = 'flex';
+      accordionDropdown.classList.add('open')
+    }
+    
+  });
+
+
+  // ckeckbox operation
   checkbox();
 
 

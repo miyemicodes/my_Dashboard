@@ -281,9 +281,9 @@ gap: 8px;
   background-color: #1A1A1A;
 }
 
-.accordion-step{
+.accordion-step {
 width: 100%;
-display: flex;
+display: none;
 flex-direction: column;
 gap: 8px;
 }
