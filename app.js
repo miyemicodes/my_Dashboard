@@ -1,3 +1,105 @@
+function checkbox() {
+  let numberOfCheckedBox = 0;
+  let activeSubSectionIndex = 0;
+  const crdDivs = document.querySelectorAll('.shopify-accordion');
+  const selectBoxes = document.querySelectorAll('.tick');
+  const progressCount = document.querySelector('#progress-count');
+  const percentageDiv = document.querySelector('.progress-bar2');
+
+  function updateProgressBarAndCount(numberOfCheckedBoxParams) {
+      progressCount.innerHTML = numberOfCheckedBoxParams;
+      const percentage = (numberOfCheckedBoxParams / selectBoxes.length) * 100;
+      percentageDiv.style.width = `${percentage}%`;
+  }
+  function eventHelpForCheckBox(thebox) {
+      thebox.addEventListener('click', () => {
+          const emptyCheck = thebox.querySelector('.empty');
+          const loading = thebox.querySelector('.loader');
+          const loaded = thebox.querySelector('.loaded');
+
+          if (thebox.classList.contains('select-box-active')) {
+              loading.style.display = 'block';
+              loaded.style.display = 'none';
+              thebox.classList.remove('select-box-active');
+              setTimeout(() => {
+                  loading.style.display = 'none';
+                  emptyCheck.style.display = 'block';
+              }, 150);
+              numberOfCheckedBox = --numberOfCheckedBox;
+          } else {
+              emptyCheck.style.display = 'none';
+              loading.style.display = 'block';
+              setTimeout(() => {
+                  loading.style.display = 'none';
+                  loaded.style.display = 'block';
+                  loaded.animate(
+                      [
+                          { transform: "scale(1.5)" },
+                          { transform: "scale(1)" },
+                      ],
+                      {
+                          duration: 50,
+                          iterations: 1,
+                      }
+                  )
+              }, 150);
+              thebox.classList.add('select-box-active');
+              numberOfCheckedBox = ++numberOfCheckedBox;
+              openUnChecked();
+          }
+          // do update
+          updateProgressBarAndCount(numberOfCheckedBox)
+      });
+  }
+  function toggleSubSection(theSubNote, theSubSectionDiv, idxOfCrdDiv) {
+      theSubNote.addEventListener('click', () => {
+          console.log('activeSubSectionIndex:::', activeSubSectionIndex)
+          if (!theSubSectionDiv.classList.contains('subsection-is-open')) {
+              doHelpMeClosedAlreadyOpenSubsection(theSubSectionDiv, idxOfCrdDiv)
+          } else {
+              theSubSectionDiv.classList.remove('subsection-is-open')
+              activeSubSectionIndex = -1
+          }
+      });
+  }
+  function helpMeAddEventToTheCheckBoxes(singleCrdDiv, indexOfCrdDiv) {
+      const getCheckBox = singleCrdDiv.querySelector('.select-box');
+      const getSubNote = singleCrdDiv.querySelector('.sub-note');
+      const getSubSection = singleCrdDiv.querySelector('.subsection');
+      eventHelpForCheckBox(getCheckBox);
+      toggleSubSection(getSubNote, getSubSection, indexOfCrdDiv);
+  }
+
+  function doHelpMeClosedAlreadyOpenSubsection(theSubSectionDiv, idxOfCrdDiv) {
+    theSubSectionDiv.classList.add('subsection-is-open');
+      // check if any is open already and close it
+      if (activeSubSectionIndex > - 1) {
+          crdDivs[activeSubSectionIndex].querySelector('.subsection')
+              .classList.remove('subsection-is-open')
+          
+      }
+      activeSubSectionIndex = idxOfCrdDiv;
+  }
+
+  function openUnChecked() {
+      for (let index = 0; index < crdDivs.length; index++) {
+          const crdDiv = crdDivs[index]; 
+          const getCheckBox = crdDiv.querySelector('.select-box');
+          if (!getCheckBox.classList.contains('select-box-active')) {
+              const getSubSection = crdDiv.querySelector('.subsection');
+              doHelpMeClosedAlreadyOpenSubsection(getSubSection, index)
+              break;
+          }
+      }
+  }
+
+  for (let index = 0; index < crdDivs.length; index++) {
+      const crdDiv = crdDivs[index]; 
+      helpMeAddEventToTheCheckBoxes(crdDiv, index);
+  }
+  crdDivs[activeSubSectionIndex].querySelector('.subsection')
+                      .classList.add('subsection-is-open')
+}
 function app() {
 
   const SHOW_PROFILE = 'profile-dropdown-show';
