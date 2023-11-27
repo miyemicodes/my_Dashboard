@@ -1,93 +1,139 @@
-
-/*
-const item = document.querySelector(".accordion-dropdown");
-function toggleAccordion(){
-  const itemToggle = this.getAttribute("aria-expanded");
-  item.setAttribute("aria-expanded", "false");
-
-  if (itemToggle == "false") {
-    this.setAttribute("aria-expanded", "true");
-  }
-
-   item.addEventListener("click", toggleAccordion);
-}
-
-const accBtn = document.querySelectorAll(".tick button");
-const panel = document.querySelectorAll(".acc-drop-panel");
-
-for (let i = 0; i < accBtn.length; i++) {
-  accBtn[i].addEventListener("click",() => {
-      this.classList.toggle("active");
-
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-      }else{
-        panel.style.display = "block";
-
-      }
-  });
-  
-}
-*/
 function app() {
- 
-  const plansBtn = document.querySelector(".plan-close-icon");
-  const plansSection = document.querySelector(".shopify-plans");
-  const profileMenuBtn = document.querySelector(".profile");
-  const profileMenuContent = document.querySelector("#profile-dropdown");
-  const profileMenuItems = document.querySelectorAll(".p-menu");
-  const notifyMenuBtn = document.querySelector("#notification-drop");
-  const notifyMenuContent = document.querySelector("#notification-dropdown");
 
-  plansBtn.addEventListener("click",e =>{
+  const SHOW_PROFILE = 'profile-dropdown-show';
+  const SHOW_NOTIFICATION = 'notification-dropdown-show';
 
-    plansSection.style.display = "none";
+  const notificationButton = document.querySelector('.notification-button')
+  const notificationDropdown = document.querySelector('.notification-dropdown')
 
-  });
-  console.log(plansSection);
+  const profileDrop = document.querySelector('#profile-drop')
 
-  notifyMenuBtn.addEventListener("click", e =>{
+  const profileDropdown = document.querySelector('.profile-dropdown');
 
-   notifyMenuContent.classList.toggle("notification-active");
+  const profileMenuItems = profileDropdown.querySelectorAll(
+    '[role="menuitem"]'
+  );
 
-   // notifyMenuContent.style.display = "block";
-   // notifyMenuContent.style.display = "none";
+   function handleMenuItemArrowKeyPress(
+    event,
+     menuItemIndex,
+    allMenuItems
+  ) {
 
+    const isLastMenuItem =
+      menuItemIndex === allMenuItems.length - 1;
+    const isFirstMenuItem = menuItemIndex === 0;
 
-  });
+    const nextMenuItem = allMenuItems.item(
+      menuItemIndex + 1
+    );
+    const previousMenuItem = allMenuItems.item(
+      menuItemIndex - 1
+    );
 
+    if (
+      event.key === "ArrowRight" ||
+      event.key === "ArrowDown"
+    ) {
+      // if user is on last item, focus on first menuitem
+      if (isLastMenuItem) {
+        allMenuItems.item(0).focus();
 
+        return;
+      }
+      // then focus on next menu item
+      nextMenuItem.focus();
+    }
 
+    // if the user pressed arrow up or arrow left
+    if (
+      event.key === "ArrowUp" ||
+      event.key === "ArrowLeft"
+    ) {
+      if (isFirstMenuItem) {
+        allMenuItems.item(allMenuItems.length - 1).focus();
+        return;
+      }
 
-  function closeProfileMenu (){
-    profileMenuBtn.ariaExpanded = "false";
-    profileMenuBtn.focus();
+      previousMenuItem.focus();
+    }
+    // then focus on the previous menu item
+    // if the user is on first menu item, focus on last menuitem
   }
 
-
-  function openProfileMenu(){
-    profileMenuBtn.ariaExpanded = "true";
-    profileMenuItems.item(0).focus();
-  }
-
-  function toggleProfileMenu() {
-
-    const profileExpanded =
-    profileMenuBtn.attributes["aria-expanded"].value ===
-      "true";
-    profileMenuContent.classList.toggle("profile-active");
-
-    if (profileExpanded) {
-      closeProfileMenu();
-    } else {
-      openProfileMenu();
+  function handleMenuEscapeKeypress(event) {
+    // if user pressed escape key
+    if (event.key === "Escape") {
+      toggleMenu();
     }
   }
 
-  profileMenuBtn.addEventListener("click", toggleProfileMenu);
+  function closeMenu(menuTrigger) {
+    menuTrigger.ariaExpanded = "false";
+    menuTrigger.focus();
+  }
+  function openMenu(menuTrigger, menu, allMenuItems = null) {
+    menuTrigger.ariaExpanded = "true";
+
+    menu.addEventListener(
+      "keyup",
+      handleMenuEscapeKeypress
+    );
+
+    // for each menu item, register an event listener for the keyup event
+    if (allMenuItems) {
+      allMenuItems.item(0).focus();
+
+      allMenuItems.forEach(function (
+        menuItem,
+        menuItemIndex
+      ) {
+        menuItem.addEventListener("keyup", function (event) {
+            handleMenuItemArrowKeyPress(event, menuItemIndex, allMenuItems);
+          });
+      });
+      
+    }
+    
+  }
+
+  function toggleMenu(menuTrigger, menu, menuItems, activeClass) {
+      const isExpanded =
+        menuTrigger.attributes["aria-expanded"].value ===
+        "true";
+    // help clear class irrespective
+    switch (activeClass) {
+      case SHOW_PROFILE:
+        notificationDropdown.classList.remove(SHOW_NOTIFICATION)
+        break;
+      case SHOW_NOTIFICATION:
+        profileDropdown.classList.remove(SHOW_PROFILE)
+        break;
+    
+      default:
+        break;
+    }
+    
+
+      menu.classList.toggle(activeClass);
+
+      if (isExpanded) {
+        closeMenu(menuTrigger);
+      } else {
+        openMenu(menuTrigger, menu, menuItems);
+      }
+  }
+
+  
+  profileDrop.addEventListener("click", () =>
+    toggleMenu(profileDrop, profileDropdown, profileMenuItems, SHOW_PROFILE)
+  ); 
+  notificationButton.addEventListener("click", () =>
+    toggleMenu(notificationButton, notificationDropdown, null, SHOW_NOTIFICATION)
+  );
+
 
 
 }
 
 app();
-
