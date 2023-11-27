@@ -705,6 +705,10 @@ height: 20px;
     width: 800px;
     position: relative;
   }
+
+  .shopify-plans-content{
+    display: block;
+  }
   
   .shopify-plans .plans-text{
     width: 100%;
