@@ -112,6 +112,16 @@ function app() {
     '[role="menuitem"]'
   );
 
+  
+  const planContent = document.querySelector('.shopify-plans');
+  const planBtn = document.querySelector('.plan-close-icon');
+
+      planBtn.addEventListener('click', e =>{
+
+      planContent.style.display ="none";
+
+    });
+
    function handleMenuItemArrowKeyPress(
     event,
      menuItemIndex,
