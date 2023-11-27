@@ -134,18 +134,20 @@
         </div>
 
         <div class="dropdown2">
-          <button
-            class="profile"
-            id="profile-drop"
-            aria-haspopup="true"
-            aria-expanded="false"
-            aria-controls="profile-dropdown"
-          >
-            <p class="profile-name">Davii Collections</p>
-            <div class="profile-abbr-div">
-              <p class="profile-abbr">DC</p>
-            </div>
-          </button>
+          <div>
+            <button
+              class="profile"
+              id="profile-drop"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="profile-dropdown"
+            >
+              <p class="profile-name">Davii Collections</p>
+              <div class="profile-abbr-div">
+                <p class="profile-abbr">DC</p>
+              </div>
+            </button>
+          </div>
 
           <div id="profile-dropdown" aria-labelledby="profile-drop" role="menu">
             <div class="dropdown-top">
@@ -186,7 +188,7 @@
                     clip-rule="evenodd"
                     d="M13.757 3H7.24302C6.85944 3 6.4971 3.17611 6.26012 3.47772L3.87394 6.51468C3.63169 6.823 3.5 7.20375 3.5 7.59586V8.25C3.5 9.31867 4.10958 10.245 5 10.7001V15.25C5 16.2165 5.7835 17 6.75 17H14.25C15.2165 17 16 16.2165 16 15.25V10.7001C16.8904 10.245 17.5 9.31867 17.5 8.25V7.76879C17.5 7.26465 17.3307 6.77511 17.0192 6.3787L14.7399 3.47772C14.5029 3.17611 14.1406 3 13.757 3ZM13.5 15.5H14.25C14.3881 15.5 14.5 15.3881 14.5 15.25V11C13.712 11 13.0014 10.6686 12.5 10.1375C11.9986 10.6686 11.288 11 10.5 11C9.71199 11 9.00138 10.6686 8.5 10.1375C7.99862 10.6686 7.28801 11 6.5 11V15.25C6.5 15.3881 6.61193 15.5 6.75 15.5H10.5V13C10.5 12.4477 10.9477 12 11.5 12H12.5C13.0523 12 13.5 12.4477 13.5 13V15.5ZM6.5 9.5H6.25C5.55964 9.5 5 8.94036 5 8.25V7.59586C5 7.53985 5.01881 7.48545 5.05342 7.44141L7.36453 4.5H13.6355L15.8397 7.30543C15.9436 7.43757 16 7.60075 16 7.76879V8.25C16 8.94036 15.4404 9.5 14.75 9.5H14.5C13.8096 9.5 13.25 8.94036 13.25 8.25V7.75C13.25 7.33579 12.9142 7 12.5 7C12.0858 7 11.75 7.33579 11.75 7.75V8.25C11.75 8.94036 11.1904 9.5 10.5 9.5C9.80964 9.5 9.25 8.94036 9.25 8.25V7.75C9.25 7.33579 8.91421 7 8.5 7C8.08579 7 7.75 7.33579 7.75 7.75V8.25C7.75 8.94036 7.19036 9.5 6.5 9.5Z"
                     fill="
-                    #303030"
+            #303030"
                   />
                 </svg>
 
@@ -196,15 +198,19 @@
 
             <ul class="dropdown-mid">
               <li class="dropdown-mid-link p-menu">
-                <a href="https://www.admin.shopify.com" role="menuitem"> Help Center </a>
+                <a href="https://admin.shopify.com" role="menuitem">
+                  Help Center
+                </a>
               </li>
 
               <li class="dropdown-mid-link p-menu">
-                <a href="https://www.admin.shopify.com" role="menuitem"> Changelog </a>
+                <a href="https://admin.shopify.com" role="menuitem">
+                  Changelog
+                </a>
               </li>
 
               <li class="dropdown-mid-link p-menu">
-                <a href="https://www.admin.shopify.com" role="menuitem">
+                <a href="https://admin.shopify.com" role="menuitem">
                   Community forums
                 </a>
               </li>
@@ -231,10 +237,14 @@
 
             <ul class="dropdown-bottom">
               <li class="dropdown-mid-link p-menu">
-                <a href="https://www.admin.shopify.com" role="menuitem"> Manage account </a>
+                <a href="https://admin.shopify.com" role="menuitem">
+                  Manage account
+                </a>
               </li>
               <li class="dropdown-mid-link p-menu">
-                <a href="https://www.admin.shopify.com" role="menuitem"> Log out </a>
+                <a href="https://admin.shopify.com" role="menuitem">
+                  Log out
+                </a>
               </li>
             </ul>
           </div>
@@ -263,7 +273,9 @@
             </svg>
           </button>
         </div>
-        <button class="plans-button"> <a href="https://www.shopify.com/pricing"> Select a plan</a></button>
+        <button class="plans-button">
+          <a href="https://www.shopify.com/pricing"> Select a plan</a>
+        </button>
       </div>
 
       <div class="shopify-dashboard">
@@ -325,14 +337,14 @@
             <div class="shopify-accordion1">
               <div class="shopify-accordion-head">
                 <div class="tick">
-                  <button>
+                  <button class="tick-button">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="40"
                       height="40"
                       viewBox="0 0 32 32"
                       fill="none"
-                      class="tick-icon"
+                      class="tick-icon dashed-circle"
                     >
                       <circle
                         cx="16"
@@ -343,6 +355,38 @@
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-dasharray="4 6"
+                      />
+                    </svg>
+
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tick-icon checked-icon"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      class="tick-icon"
+                    >
+                      <path
+                        d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                        stroke="#fff"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       />
                     </svg>
                   </button>
@@ -372,27 +416,60 @@
             <div class="shopify-accordion1">
               <div class="shopify-accordion-head">
                 <div class="tick">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    class="tick-icon"
-                  >
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="12"
-                      stroke="#8A8A8A"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-dasharray="4 6"
-                    />
-                  </svg>
-                </div>
+                  <button class="tick-button">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      class="tick-icon"
+                    >
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="12"
+                        stroke="#8A8A8A"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="4 6"
+                      />
+                    </svg>
 
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tick-icon"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      class="tick-icon"
+                    >
+                      <path
+                        d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                        stroke="#fff"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
                 <h3>Add your first product</h3>
               </div>
 
@@ -420,25 +497,59 @@
             <div class="shopify-accordion1">
               <div class="shopify-accordion-head">
                 <div class="tick">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    class="tick-icon"
-                  >
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="12"
-                      stroke="#8A8A8A"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-dasharray="4 6"
-                    />
-                  </svg>
+                  <button class="tick-button">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      class="tick-icon"
+                    >
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="12"
+                        stroke="#8A8A8A"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="4 6"
+                      />
+                    </svg>
+
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tick-icon"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      class="tick-icon"
+                    >
+                      <path
+                        d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                        stroke="#fff"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
                 </div>
 
                 <h3>Add a custom domain</h3>
@@ -466,25 +577,59 @@
             <div class="shopify-accordion1">
               <div class="shopify-accordion-head">
                 <div class="tick">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    class="tick-icon"
-                  >
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="12"
-                      stroke="#8A8A8A"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-dasharray="4 6"
-                    />
-                  </svg>
+                  <button class="tick-button">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      class="tick-icon"
+                    >
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="12"
+                        stroke="#8A8A8A"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="4 6"
+                      />
+                    </svg>
+
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tick-icon"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      class="tick-icon"
+                    >
+                      <path
+                        d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                        stroke="#fff"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
                 </div>
 
                 <h3>Name your store</h3>
@@ -512,25 +657,59 @@
             <div class="shopify-accordion1">
               <div class="shopify-accordion-head">
                 <div class="tick">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    class="tick-icon"
-                  >
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="12"
-                      stroke="#8A8A8A"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-dasharray="4 6"
-                    />
-                  </svg>
+                  <button class="tick-button">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      class="tick-icon"
+                    >
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="12"
+                        stroke="#8A8A8A"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-dasharray="4 6"
+                      />
+                    </svg>
+
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tick-icon"
+                    >
+                      <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                      <path
+                        d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      class="tick-icon"
+                    >
+                      <path
+                        d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                        stroke="#fff"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
                 </div>
 
                 <h3>Set up a payment provider</h3>

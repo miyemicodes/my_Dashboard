@@ -33,10 +33,11 @@ function app() {
  
   const plansBtn = document.querySelector(".plan-close-icon");
   const plansSection = document.querySelector(".shopify-plans");
-  const profileMenuBtn = document.querySelector("#profile-drop");
+  const profileMenuBtn = document.querySelector(".profile");
   const profileMenuContent = document.querySelector("#profile-dropdown");
   const profileMenuItems = document.querySelectorAll(".p-menu");
-  
+  const notifyMenuBtn = document.querySelector("#notification-drop");
+  const notifyMenuContent = document.querySelector("#notification-dropdown");
 
   plansBtn.addEventListener("click",e =>{
 
@@ -44,6 +45,19 @@ function app() {
 
   });
   console.log(plansSection);
+
+  notifyMenuBtn.addEventListener("click", e =>{
+
+   notifyMenuContent.classList.toggle("notification-active");
+
+   // notifyMenuContent.style.display = "block";
+   // notifyMenuContent.style.display = "none";
+
+
+  });
+
+
+
 
   function closeProfileMenu (){
     profileMenuBtn.ariaExpanded = "false";
@@ -76,5 +90,4 @@ function app() {
 }
 
 app();
-
 
