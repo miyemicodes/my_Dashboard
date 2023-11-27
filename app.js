@@ -11,6 +11,7 @@ function checkbox() {
       const percentage = (numberOfCheckedBoxParams / selectBoxes.length) * 100;
       percentageDiv.style.width = `${percentage}%`;
   }
+  
   function eventHelpForCheckBox(thebox) {
       thebox.addEventListener('click', () => {
           const emptyCheck = thebox.querySelector('.empty');
@@ -51,6 +52,7 @@ function checkbox() {
           updateProgressBarAndCount(numberOfCheckedBox)
       });
   }
+
   function toggleSubSection(theSubNote, theSubSectionDiv, idxOfCrdDiv) {
       theSubNote.addEventListener('click', () => {
           console.log('activeSubSectionIndex:::', activeSubSectionIndex)
@@ -62,7 +64,9 @@ function checkbox() {
           }
       });
   }
+
   function helpMeAddEventToTheCheckBoxes(singleCrdDiv, indexOfCrdDiv) {
+
       const getCheckBox = singleCrdDiv.querySelector('.select-box');
       const getSubNote = singleCrdDiv.querySelector('.sub-note');
       const getSubSection = singleCrdDiv.querySelector('.subsection');
@@ -100,6 +104,8 @@ function checkbox() {
   crdDivs[activeSubSectionIndex].querySelector('.subsection')
                       .classList.add('subsection-is-open')
 }
+
+
 function app() {
 
   const SHOW_PROFILE = 'profile-dropdown-show';
