@@ -308,20 +308,7 @@ accordionDropdown.addEventListener("click", () => {
 
 });
 
-/*
- 
-  accordionDropdown.addEventListener("click", () => {
-    if(accordionDropdown.classList.contains('open')) {
-      accordionStep.style.display = 'none';
-      accordionDropdown.classList.remove('open')
-    } else {
-      accordionStep.style.display = 'flex';
-      accordionDropdown.classList.add('open')
-    }
-    
-  co});
 
-*/
   // ckeckbox operation
   checkbox();
 
