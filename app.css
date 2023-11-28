@@ -1,3 +1,7 @@
+/*
+CSS STYLING
+*/
+
 *::before,
 *::after,
 *{
@@ -20,6 +24,10 @@ a{
 li{
   list-style: none;
 }
+
+/*
+HEADER
+*/
 
 #header{
   background:#1a1a1a;
@@ -139,297 +147,10 @@ li{
   display: block;
 }
 
-.container{
- width: 100%;
- padding: 30px 0;
- display: flex;
- flex-direction: column;
- gap:16px;
-}
 
-.shopify-plans{
-  background: #1A1A1A;
-  padding: 12px 8px 12px 16px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items:flex-start;
-  justify-content: center;
-  gap: 16px;
-}
-
-.shopify-plans .plans-text{
-  display: flex;
-  align-items:center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.shopify-plans .plans-text p{
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 18.2px;
-  color: #E3E3E3;
-}
-
-.shopify-plans .plans-text .plan-close-icon{
-  width: 36px;
-  height: 36px;
-  border: none;
-  padding: 8px;
-  border-radius: 10px;
-  background: none;
-  gap: 8px;
-}
-
-.shopify-plans .plans-text .plan-icon{
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.shopify-plans .plans-button {
-  border: 1px solid #00000023;  /*10%*/
-  border-radius:6px;
-  padding: 6px 12px;
-  background:#FFFFFF;
-  box-shadow: 0px -1px 0px 0px #B5B5B5;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 15.6px;
-}
-
-.shopify-plans .plans-button > a{
-  color:#323232;      /*10%*/
-}
-
-.shopify-dashboard{
-  background:#FFFFFF;
-  border: 1px solid #DBDBDB;
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  box-shadow: 0px 1px 0px 0px 5%;
-
-}
-
-.shopify-dashboard .main-accordion{
-  display: flex;
-  flex-direction: column;
-  align-items:flex-start;
-  justify-content: center;
-  gap: 16px;
-}
-
-.main-accordion .main-accordion-content{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-
-.main-accordion-text h3{
-  font-size: 14px;
-  font-weight: 600;
-  color:#303030;
-  line-height: 19.6px;
-}
-
-.main-accordion-text p{
-  font-size: 13px;
-  font-weight: 400;
-  color:#303030;
-  line-height: 18.2px;
-}
-
-.accordion-progress-bar p{
-  font-size: 12px;
-  font-weight: 400;
-  color:#303030;
-  line-height: 15.6px;
-}
-
-.main-accordion-content button{
-  border: none;
-  background: none;
-}
-
-.main-accordion-content button .close{display: none;}
-
-.accordion-progress-bar{
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
-}
-
-.progress-bar1{
-  height: 4px;
-  width: 72px;
-  border-radius: 28px;
-  background: #E3E3E3;
-  overflow: hidden;
-}
-
-.progress-bar2{
-  width: 0%;
-  height: 4px;
-  border-radius: 28px;
-  background-color: #1A1A1A;
-}
-
-.accordion-step{
-width: 100%;
-display: flex;
-flex-direction: column;
-gap: 8px;
-}
-
-.accordion-step .shopify-accordion{
- display: flex;
- align-items: center;
- justify-content: center;
- padding: 8px 8px 12px 8px;
- gap: 8px;
- text-align: left;
- width: 100%;
-}
-
-.accordion-step .shopify-accordion .shopify-accordion1{
-  display: flex;
-  flex-direction: column;
-  padding: 2px 0px;
-  gap: 16px;
-  width: 100%;
-}
-
-.shopify-accordion1 .shopify-accordion-head{
-  display: flex;
-  gap: 8px;
-  width: 100%;
-}
-
-.shopify-accordion-head .tick svg{
-  width: 20px;
-  height: 20px;
-}
-
-.loader-hover-state {
-  display: none;
-}
-.loader {
-  display: none;
-}
-
-.loaded {
-  display: none;
-}
-
-
-.shopify-accordion-head h3{
-  font-weight: 600;
-  font-size: 13px;
-  color:#303030;
-  line-height: 18.2px;
-}
-
-.shopify-accordion1 .acc-drop-panel{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding-left: 28px;
-
-}
-
-.shopify-accordion1 .acc-drop-panel p{
-  font-weight: 500;
-  font-size: 14px;
-  color:#616161;
-  line-height: 19.6px; 
-}
-
-.acc-drop-panel p > a{
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 18.2px;
-  color: #005BD3;
-  cursor: pointer;
-}
-
-.acc-drop-panel .accordion-btn{
-   color:#F6F3F6;
-   font-weight: 600;
-   font-size: 12px;
-   padding: 6px 12px;
-   border: 1.5px solid #FFFFFF33;  
-   border-width: 1.5px, 1.5px, 0px, 1.5px;
-   border-radius:6px;
-   background:#404040;
-   box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
-   0px 2px 0px 0px #000;
-   margin-top: 16px;
-}
-
-.acc-drop-panel .accordion-btn:hover{
-  background: #2A2A2A;
-  border: 1.5px solid #FFFFFF33;  
-  border-width: 1.5px, 1.5px, 0px, 1.5px;
-  box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
-   0px 2px 0px 0px #000;
-}
-
-.acc-drop-panel .accordion-btn:active{
-  background: #2B2B2B;
-  box-shadow: 0px 0px 0px 1.5px #333333,
-  0px 3px 0px 0px #000000 inset;
-
-}
-
-.acc-drop-panel .accordion-btn:focus{
-  background: #404040;
-  box-shadow: 0px 0px 0px 5px #005BD3,
-   0px 0px 0px 3px #FFFFFF,
-   0px 0px 0px 1.5px #333333;
-}
-
-.acc-drop-panel .accordion-btn2{
-font-weight: 600;
-font-size: 12px;
-line-height: 15.6px;
-color: #323232;
-border-radius: 6px;
-border: 1px solid #0000001A;
-padding: 6px 12px;
-background: #FFFFFF;
-box-shadow: 0px -1px 0px 0px #B5B5B5 inset;
-}
-
-.acc-drop-panel .accordion-btn2:hover{
-background: #F7F7F7;
-color: #323232;
-}
-
-.acc-drop-panel .accordion-btn2:active{
-  background: #F7F7F7;
-  box-shadow: 0px 2px 1.5px 0px #E2E2E2 inset;
-}
-
-.acc-drop-panel .accordion-btn2:focus{
-  background: #FFFFFF;
-  border: 1px solid #0000001A;
-  box-shadow: 0px 0px 0px 3px #005BD3,
-  0px 0px 0px 1px #FFFFFF,
-  0px -1px 0px 0px #B5B5B5 inset;
-
-}
-
-.shopify-accordion-img{
-  display: none;
-}
+/*
+PROFILE / NOTIFICATION DROPDOWN
+*/
 
 .dropdown1{
   position: relative;
@@ -647,6 +368,353 @@ height: 20px;
   padding: 6px;
 }
 
+
+/*
+CONTAINER-DIV
+*/
+
+.container{
+ width: 100%;
+ padding: 30px 0;
+ display: flex;
+ flex-direction: column;
+ gap:16px;
+}
+
+
+/*
+SHOPIFY-PLANS
+*/
+
+.shopify-plans{
+  background: #1A1A1A;
+  padding: 12px 8px 12px 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content: center;
+  gap: 16px;
+}
+
+.shopify-plans .plans-text{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.shopify-plans .plans-text p{
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18.2px;
+  color: #E3E3E3;
+}
+
+.shopify-plans .plans-text .plan-close-icon{
+  width: 36px;
+  height: 36px;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  background: none;
+  gap: 8px;
+}
+
+.shopify-plans .plans-text .plan-icon{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.shopify-plans .plans-button {
+  border: 1px solid #00000023; 
+  border-radius:6px;
+  padding: 6px 12px;
+  background:#FFFFFF;
+  box-shadow: 0px -1px 0px 0px #B5B5B5;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15.6px;
+}
+
+.shopify-plans .plans-button > a{
+  color:#323232;   
+}
+
+/*
+SHOPIFY-DASHBOARD 
+*/
+
+.shopify-dashboard{
+  background:#FFFFFF;
+  border: 1px solid #DBDBDB;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  box-shadow: 0px 1px 0px 0px 5%;
+
+}
+
+/*
+MAIN ACCORDION
+*/
+
+.shopify-dashboard .main-accordion{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content: center;
+  gap: 16px;
+}
+
+.main-accordion .main-accordion-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.main-accordion-text h3{
+  font-size: 14px;
+  font-weight: 600;
+  color:#303030;
+  line-height: 19.6px;
+}
+
+.main-accordion-text p{
+  font-size: 13px;
+  font-weight: 400;
+  color:#303030;
+  line-height: 18.2px;
+}
+
+.accordion-progress-bar p{
+  font-size: 12px;
+  font-weight: 400;
+  color:#303030;
+  line-height: 15.6px;
+}
+
+.main-accordion-content button{
+  border: none;
+  background: none;
+}
+
+.main-accordion-content button .close{display: none;}
+
+.accordion-progress-bar{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+}
+
+.progress-bar1{
+  height: 4px;
+  width: 72px;
+  border-radius: 28px;
+  background: #E3E3E3;
+  overflow: hidden;
+}
+
+.progress-bar2{
+  width: 0%;
+  height: 4px;
+  border-radius: 28px;
+  background-color: #1A1A1A;
+}
+
+/*
+SUB-ACCORDION
+*/
+
+.accordion-step {
+width: 100%;
+display: none;
+flex-direction: column;
+gap: 8px;
+}
+
+.accordion-step .shopify-accordion{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 8px 8px 12px 8px;
+ gap: 8px;
+ text-align: left;
+ width: 100%;
+}
+
+.accordion-step .shopify-accordion .shopify-accordion1{
+  display: flex;
+  flex-direction: column;
+  padding: 2px 0px;
+  gap: 16px;
+  width: 100%;
+}
+
+.shopify-accordion1 .shopify-accordion-head{
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.tick {
+  background: none;
+  border: none;
+}
+
+.shopify-accordion-head .tick svg{
+  width: 20px;
+  height: 20px;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader{
+  animation-name: spin;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.loader-hover-state {
+  display: none;
+}
+.loader {
+  display: none;
+}
+
+.loaded {
+  display: none;
+}
+
+
+.shopify-accordion-head h3{
+  font-weight: 600;
+  font-size: 13px;
+  color:#303030;
+  line-height: 18.2px;
+}
+
+.shopify-accordion1 .acc-drop-panel{
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 28px;
+}
+
+.shopify-accordion-open .acc-drop-panel{
+  display: flex;
+}
+
+.shopify-accordion .shopify-accordion-img{
+  display: none;
+}
+.shopify-accordion-open .shopify-accordion-img {
+  display: block;
+}
+
+.shopify-accordion1 .acc-drop-panel p{
+  font-weight: 500;
+  font-size: 14px;
+  color:#616161;
+  line-height: 19.6px; 
+}
+
+.acc-drop-panel p > a{
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18.2px;
+  color: #005BD3;
+  cursor: pointer;
+}
+
+.acc-drop-panel .accordion-btn{
+   color:#F6F3F6;
+   font-weight: 600;
+   font-size: 12px;
+   padding: 6px 12px;
+   border: 1.5px solid #FFFFFF33;  
+   border-width: 1.5px, 1.5px, 0px, 1.5px;
+   border-radius:6px;
+   background:#404040;
+   box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
+   0px 2px 0px 0px #000;
+   margin-top: 16px;
+}
+
+.acc-drop-panel .accordion-btn:hover{
+  background: #2A2A2A;
+  border: 1.5px solid #FFFFFF33;  
+  border-width: 1.5px, 1.5px, 0px, 1.5px;
+  box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
+   0px 2px 0px 0px #000;
+}
+
+.acc-drop-panel .accordion-btn:active{
+  background: #2B2B2B;
+  box-shadow: 0px 0px 0px 1.5px #333333,
+  0px 3px 0px 0px #000000 inset;
+
+}
+
+.acc-drop-panel .accordion-btn:focus{
+  background: #404040;
+  box-shadow: 0px 0px 0px 5px #005BD3,
+   0px 0px 0px 3px #FFFFFF,
+   0px 0px 0px 1.5px #333333;
+}
+
+.acc-drop-panel .accordion-btn2{
+font-weight: 600;
+font-size: 12px;
+line-height: 15.6px;
+color: #323232;
+border-radius: 6px;
+border: 1px solid #0000001A;
+padding: 6px 12px;
+background: #FFFFFF;
+box-shadow: 0px -1px 0px 0px #B5B5B5 inset;
+}
+
+.acc-drop-panel .accordion-btn2:hover{
+background: #F7F7F7;
+color: #323232;
+}
+
+.acc-drop-panel .accordion-btn2:active{
+  background: #F7F7F7;
+  box-shadow: 0px 2px 1.5px 0px #E2E2E2 inset;
+}
+
+.acc-drop-panel .accordion-btn2:focus{
+  background: #FFFFFF;
+  border: 1px solid #0000001A;
+  box-shadow: 0px 0px 0px 3px #005BD3,
+  0px 0px 0px 1px #FFFFFF,
+  0px -1px 0px 0px #B5B5B5 inset;
+
+}
+
+
+
+/*
+MEDIA QUERIES
+*/
+
 @media screen and (min-width:1024px) {
 
   .container{
@@ -750,10 +818,6 @@ height: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-
-  .shopify-accordion .shopify-accordion-img{
-    display: block;
   }
 
   

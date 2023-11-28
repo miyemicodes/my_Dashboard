@@ -1,38 +1,85 @@
+//CHECKBOX
+
 function checkbox() {
   let numberOfCheckedBox = 0;
-  let activeSubSectionIndex = 0;
-  const crdDivs = document.querySelectorAll('.shopify-accordion');
+  let activeAccordionIndex = 0;
+  const shopifyAccordions = document.querySelectorAll('.shopify-accordion');
   const selectBoxes = document.querySelectorAll('.tick');
   const progressCount = document.querySelector('#progress-count');
   const percentageDiv = document.querySelector('.progress-bar2');
+
+
+  //SUBSECTION ACCORDION TOGGLE
+
+  function toggleSubSection(singleAccordionDiv, idxOfAccDiv) {
+     const theSubNote = singleAccordionDiv.querySelector('.sub-note');
+    theSubNote.addEventListener('click', () => {
+        if (!singleAccordionDiv.classList.contains('shopify-accordion-open')) {
+          singleAccordionDiv.classList.add('shopify-accordion-open');
+           activeAccordionIndex = idxOfAccDiv;
+        } else {
+            singleAccordionDiv.classList.remove('shopify-accordion-open');
+            activeSubSectionIndex = -1
+        }
+    });
+}
+
+//OPEN UNCHECKED ACCORDION
+
+  function openUnChecked() {
+    for (let index = 0; index < shopifyAccordions.length; index++) {
+        const shopifyAccordion = shopifyAccordions[index]; 
+        const getCheckBox = shopifyAccordion.querySelector('.tick');
+      if (!getCheckBox.classList.contains('checked')) {
+          shopifyAccordion.classList.add('shopify-accordion-open');
+            doHelpMeClosedAlreadyOpenSubsection(index)
+            break;
+        }
+    }
+  }
+
+
+//CLOSE OPENED ACCORDION
+
+  function doHelpMeClosedAlreadyOpenSubsection(newIdx) {
+      // check if any is open already and close it
+      if (activeAccordionIndex > - 1) {
+          shopifyAccordions[activeAccordionIndex].classList.remove('shopify-accordion-open')
+      }
+      activeAccordionIndex = newIdx;
+  }
+
+//PROGRESS BAR UPDATE
 
   function updateProgressBarAndCount(numberOfCheckedBoxParams) {
       progressCount.innerHTML = numberOfCheckedBoxParams;
       const percentage = (numberOfCheckedBoxParams / selectBoxes.length) * 100;
       percentageDiv.style.width = `${percentage}%`;
   }
-  
-  function eventHelpForCheckBox(thebox) {
-      thebox.addEventListener('click', () => {
-          const emptyCheck = thebox.querySelector('.empty');
-          const loading = thebox.querySelector('.loader');
-          const loaded = thebox.querySelector('.loaded');
 
-          if (thebox.classList.contains('select-box-active')) {
+//CHECKBOX 
+
+  function eventHelpForCheckBox(tickButton) {
+    tickButton.addEventListener('click', () => {
+          const emptyCheck = tickButton.querySelector('.empty');
+          const loading = tickButton.querySelector('.loader');
+          const loaded = tickButton.querySelector('.loaded');
+          if (tickButton.classList.contains('checked')) {
               loading.style.display = 'block';
               loaded.style.display = 'none';
-              thebox.classList.remove('select-box-active');
               setTimeout(() => {
                   loading.style.display = 'none';
                   emptyCheck.style.display = 'block';
               }, 150);
-              numberOfCheckedBox = --numberOfCheckedBox;
+            numberOfCheckedBox = --numberOfCheckedBox;
+            tickButton.classList.remove('checked')
           } else {
               emptyCheck.style.display = 'none';
               loading.style.display = 'block';
               setTimeout(() => {
                   loading.style.display = 'none';
-                  loaded.style.display = 'block';
+                loaded.style.display = 'block';
+                // this is animation:: do move to css
                   loaded.animate(
                       [
                           { transform: "scale(1.5)" },
@@ -43,9 +90,9 @@ function checkbox() {
                           iterations: 1,
                       }
                   )
-              }, 150);
-              thebox.classList.add('select-box-active');
-              numberOfCheckedBox = ++numberOfCheckedBox;
+              }, 150); 
+            numberOfCheckedBox = ++numberOfCheckedBox;
+            tickButton.classList.add('checked')
               openUnChecked();
           }
           // do update
@@ -53,58 +100,23 @@ function checkbox() {
       });
   }
 
-  function toggleSubSection(theSubNote, theSubSectionDiv, idxOfCrdDiv) {
-      theSubNote.addEventListener('click', () => {
-          console.log('activeSubSectionIndex:::', activeSubSectionIndex)
-          if (!theSubSectionDiv.classList.contains('subsection-is-open')) {
-              doHelpMeClosedAlreadyOpenSubsection(theSubSectionDiv, idxOfCrdDiv)
-          } else {
-              theSubSectionDiv.classList.remove('subsection-is-open')
-              activeSubSectionIndex = -1
-          }
-      });
+//CHECKBOX TOGGLE EVENT
+
+  function helpMeAddEventToTheCheckBoxes(singleAccordionDiv, indexOfAccordionDiv) {
+    const getCheckBoxButton = singleAccordionDiv.querySelector('.tick');
+    eventHelpForCheckBox(getCheckBoxButton);
+    toggleSubSection(singleAccordionDiv, indexOfAccordionDiv);
   }
 
-  function helpMeAddEventToTheCheckBoxes(singleCrdDiv, indexOfCrdDiv) {
-
-      const getCheckBox = singleCrdDiv.querySelector('.select-box');
-      const getSubNote = singleCrdDiv.querySelector('.sub-note');
-      const getSubSection = singleCrdDiv.querySelector('.subsection');
-      eventHelpForCheckBox(getCheckBox);
-      toggleSubSection(getSubNote, getSubSection, indexOfCrdDiv);
+  for (let index = 0; index < shopifyAccordions.length; index++) {
+    const shopifyAccordion = shopifyAccordions[index];
+      helpMeAddEventToTheCheckBoxes(shopifyAccordion, index);
   }
-
-  function doHelpMeClosedAlreadyOpenSubsection(theSubSectionDiv, idxOfCrdDiv) {
-    theSubSectionDiv.classList.add('subsection-is-open');
-      // check if any is open already and close it
-      if (activeSubSectionIndex > - 1) {
-          crdDivs[activeSubSectionIndex].querySelector('.subsection')
-              .classList.remove('subsection-is-open')
-          
-      }
-      activeSubSectionIndex = idxOfCrdDiv;
-  }
-
-  function openUnChecked() {
-      for (let index = 0; index < crdDivs.length; index++) {
-          const crdDiv = crdDivs[index]; 
-          const getCheckBox = crdDiv.querySelector('.select-box');
-          if (!getCheckBox.classList.contains('select-box-active')) {
-              const getSubSection = crdDiv.querySelector('.subsection');
-              doHelpMeClosedAlreadyOpenSubsection(getSubSection, index)
-              break;
-          }
-      }
-  }
-
-  for (let index = 0; index < crdDivs.length; index++) {
-      const crdDiv = crdDivs[index]; 
-      helpMeAddEventToTheCheckBoxes(crdDiv, index);
-  }
-  crdDivs[activeSubSectionIndex].querySelector('.subsection')
-                      .classList.add('subsection-is-open')
+  shopifyAccordions[activeAccordionIndex].classList.add('shopify-accordion-open');
 }
 
+
+//OTHER FUNCTIONALITIES
 
 function app() {
 
@@ -122,6 +134,7 @@ function app() {
     '[role="menuitem"]'
   );
 
+//SELECT PLAN EVENT
   
   const planContent = document.querySelector('.shopify-plans');
   const planBtn = document.querySelector('.plan-close-icon');
@@ -131,6 +144,8 @@ function app() {
       planContent.style.display ="none";
 
     });
+
+//  KEYBOARD EVENT,MOUSE EVENTS
 
    function handleMenuItemArrowKeyPress(
     event,
@@ -186,10 +201,15 @@ function app() {
     }
   }
 
+// OPEN MENU
+
   function closeMenu(menuTrigger) {
     menuTrigger.ariaExpanded = "false";
     menuTrigger.focus();
   }
+
+//  CLOSE MENU
+
   function openMenu(menuTrigger, menu, allMenuItems = null) {
     menuTrigger.ariaExpanded = "true";
 
@@ -214,6 +234,8 @@ function app() {
     }
     
   }
+
+//  TOGGLE MENU
 
   function toggleMenu(menuTrigger, menu, menuItems, activeClass) {
       const isExpanded =
@@ -242,6 +264,7 @@ function app() {
       }
   }
 
+//  PROFILE/NOTIFICATION TOGGLE
   
   profileDrop.addEventListener("click", () =>
     toggleMenu(profileDrop, profileDropdown, profileMenuItems, SHOW_PROFILE)
@@ -250,6 +273,25 @@ function app() {
     toggleMenu(notificationButton, notificationDropdown, null, SHOW_NOTIFICATION)
   );
 
+
+//   MAIN ACCORDION EVENT
+
+  const accordionDropdown = document.querySelector('.accordion-dropdown');
+  const accordionStep = document.querySelector('.accordion-step');
+  accordionDropdown.addEventListener("click", () => {
+    if(accordionDropdown.classList.contains('open')) {
+      accordionStep.style.display = 'none';
+      accordionDropdown.classList.remove('open')
+    } else {
+      accordionStep.style.display = 'flex';
+      accordionDropdown.classList.add('open')
+    }
+    
+  });
+
+
+  // ckeckbox operation
+  checkbox();
 
 
 }
