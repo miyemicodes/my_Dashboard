@@ -283,28 +283,44 @@ const accordionDropdown = document.querySelector('.accordion-dropdown');
 const accordionStep = document.querySelector('.accordion-step');
 const accMenuItems = accordionStep.querySelectorAll('[role ="menuitem"]');
 
-console.log(accordionDropdown.attributes);
+//console.log(accordionDropdown.attributes);
 
 
 accordionDropdown.addEventListener("click", () => {
 
   accordionStep.classList.toggle("accordion-step-active");
 
-  const accExpanded = accordionDropdown.ariaExpanded;
-
-  if (accExpanded === "true"){
-    accordionDropdown.ariaExpanded = "false";
-
-   // console.log("hereA",accordionDropdown.ariaExpanded);
-  }else{
-    accordionDropdown.ariaExpanded = "true";
-   // console.log("hereB",accordionDropdown.ariaExpanded);
-
-    accMenuItems.item(0).focus();
-    console.log(accMenuItems.item(0).focus());
+  function handleAccEscapeKeypress(event) {
+    // if user pressed escape key
+    if (event.key === "Escape") {
+      toggleAccordion();
+    }
   }
- // console.log(accExpanded);
 
+  function toggleAccordion() {
+
+    const accExpanded = accordionDropdown.ariaExpanded;
+
+    if (accExpanded === "true"){
+      accordionDropdown.ariaExpanded = "false";
+  
+  
+  
+     // console.log("hereA",accordionDropdown.ariaExpanded);
+    }else{
+      accordionDropdown.ariaExpanded = "true";
+     // console.log("hereB",accordionDropdown.ariaExpanded);
+  
+      accMenuItems.item(0).focus();
+      console.log(accMenuItems.item(0).focus());
+  
+      accordionStep.addEventListener("keyup",handleAccEscapeKeypress);
+    }
+ // console.log(accExpanded);
+  
+  accordionDropdown.addEventListener("click", toggleAccordion);
+
+  }
 
 });
 
