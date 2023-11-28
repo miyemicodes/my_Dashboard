@@ -1,3 +1,4 @@
+
 //CHECKBOX
 
 function checkbox() {
@@ -79,7 +80,7 @@ function checkbox() {
               setTimeout(() => {
                   loading.style.display = 'none';
                 loaded.style.display = 'block';
-                // this is animation:: do move to css
+                // this is animation:: to be moved to css
                   loaded.animate(
                       [
                           { transform: "scale(1.5)" },
@@ -116,7 +117,7 @@ function checkbox() {
 }
 
 
-//OTHER FUNCTIONALITIES
+// OTHER FUNCTIONALITIES
 
 function app() {
 
@@ -238,9 +239,11 @@ function app() {
 //  TOGGLE MENU
 
   function toggleMenu(menuTrigger, menu, menuItems, activeClass) {
+
       const isExpanded =
         menuTrigger.attributes["aria-expanded"].value ===
         "true";
+
     // help clear class irrespective
     switch (activeClass) {
       case SHOW_PROFILE:
@@ -276,8 +279,37 @@ function app() {
 
 //   MAIN ACCORDION EVENT
 
-  const accordionDropdown = document.querySelector('.accordion-dropdown');
-  const accordionStep = document.querySelector('.accordion-step');
+const accordionDropdown = document.querySelector('.accordion-dropdown');
+const accordionStep = document.querySelector('.accordion-step');
+const accMenuItems = accordionStep.querySelectorAll('[role ="menuitem"]');
+
+console.log(accordionDropdown.attributes);
+
+
+accordionDropdown.addEventListener("click", () => {
+
+  accordionStep.classList.toggle("accordion-step-active");
+
+  const accExpanded = accordionDropdown.ariaExpanded;
+
+  if (accExpanded === "true"){
+    accordionDropdown.ariaExpanded = "false";
+
+   // console.log("hereA",accordionDropdown.ariaExpanded);
+  }else{
+    accordionDropdown.ariaExpanded = "true";
+   // console.log("hereB",accordionDropdown.ariaExpanded);
+
+    accMenuItems.item(0).focus();
+    console.log(accMenuItems.item(0).focus());
+  }
+ // console.log(accExpanded);
+
+
+});
+
+/*
+ 
   accordionDropdown.addEventListener("click", () => {
     if(accordionDropdown.classList.contains('open')) {
       accordionStep.style.display = 'none';
@@ -287,9 +319,9 @@ function app() {
       accordionDropdown.classList.add('open')
     }
     
-  });
+  co});
 
-
+*/
   // ckeckbox operation
   checkbox();
 
